@@ -1,0 +1,32 @@
+import os
+import time
+ms = input("重启还是关机？：")
+x = input("写下你打算再过多久注销你的登录（单位：秒,有效范围是 0-315360000 (10 年)）：")
+timei = int(x)
+if ms == "重启" and timei <= 315360000:
+    os.system(f"shutdown /r /t {timei}")
+    print("执行成功！")
+    quxiao = input("是否取消？（是/否）")
+    if quxiao == "是":
+        os.system("shutdown /a")
+        print("—————————————————————————————————————————————————————————————————————")
+    elif quxiao == "否":
+        os.system("shutdown /a")
+        print("—————————————————————————————————————————————————————————————————————")
+    else:
+        print("错误，请检查是否有效（5秒后重新选择）")
+elif ms == "关机" and timei <= 315360000:
+    os.system(f"shutdown /s /t {timei}")
+    print("执行成功！")
+    quxiao = input("是否取消？（是/否）")
+    if quxiao == "是":
+        os.system("shutdown /a")
+        print("—————————————————————————————————————————————————————————————————————")
+    elif quxiao == "否":
+        os.system("shutdown /a")
+        print("—————————————————————————————————————————————————————————————————————")
+    else:
+        print("错误，请检查是否有效（5秒后重新选择）")
+else:
+    print("错误，请检查是否有效")
+    print("—————————————————————————————————————————————————————————————————————")
